@@ -15,10 +15,7 @@ main(int argc, char *argv[])
 
     int n = atoi(argv[1]);
 
-    //what is the return value of sleep?
-    int test = sleep(n);
-    // delete this afterwards
-    fprintf(1, "sleep return value: %d\n", test);
+    sleep(n);
 
     exit(0);
 }
