@@ -8,14 +8,12 @@
 int
 main(int argc, char *argv[])
 {
-    int i;
-
     if(argc < 2){
         fprintf(2, "Usage: sleep time...\n");
         exit(1);
     }
 
-    int n = atoi(argv[i]);
+    int n = atoi(argv[1]);
 
     //what is the return value of sleep?
     int test = sleep(n);
