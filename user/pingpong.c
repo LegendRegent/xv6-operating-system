@@ -36,10 +36,10 @@ main(int argc, char *argv[])
         // close the read end of the child_to_parent_pipe
         close(child_to_parent_pipe[0]);
 
-        write(child_to_parent_pipe[1], " ", 1);
         if(read(parent_to_child_pipe[0], " ", 1) == 1){
             printf("%d: received ping\n", getpid());
         }
+        write(child_to_parent_pipe[1], " ", 1);
 
         exit(0);
     } else {
