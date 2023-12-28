@@ -26,6 +26,11 @@ main(int argc, char *argv[])
             printf("%d: received pong\n", getpid());
         }
 
+        // close the write end of the parent_to_child_pipe
+        close(parent_to_child_pipe[1]);
+        // close the read end of the child_to_parent_pipe
+        close(child_to_parent_pipe[0]);
+
         wait((int *) 0);
         exit(0);
 
@@ -40,6 +45,11 @@ main(int argc, char *argv[])
             printf("%d: received ping\n", getpid());
         }
         write(child_to_parent_pipe[1], " ", 1);
+
+        // close the read end of the parent_to_child_pipe
+        close(parent_to_child_pipe[0]);
+        // close the write end of the child_to_parent_pipe
+        close(child_to_parent_pipe[1]);
 
         exit(0);
     } else {
