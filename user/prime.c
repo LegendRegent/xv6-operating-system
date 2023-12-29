@@ -56,6 +56,8 @@ main(int argc, char *argv[])
             write(p[1], &i, sizeof(int));
         }
         close(p[1]);
+        wait((int *) 0);
+        exit(0);
     } else {
         close(p[1]);
         batch(p);
