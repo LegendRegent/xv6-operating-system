@@ -22,7 +22,7 @@ fmtname(char *path)
     if(strlen(p) >= DIRSIZ)
         return p;
     memmove(buf, p, strlen(p));
-    memset(buf+strlen(p), ' ', DIRSIZ-strlen(p));
+//    memset(buf+strlen(p), ' ', DIRSIZ-strlen(p));
     return buf;
 }
 
@@ -47,9 +47,10 @@ find(char* path, char* filename)
 
     switch(st.type){
         case T_FILE:
-            DEBUG_DEBUG(path);
-            DEBUG_DEBUG(fmtname(path));
+//            DEBUG_DEBUG(path);
+//            DEBUG_DEBUG(fmtname(path));
             if(strcmp(fmtname(path), filename) == 0) {
+                DEBUG_DEBUG()
                 printf("%s\n", path);
             }
             break;
