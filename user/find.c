@@ -50,7 +50,7 @@ find(char* path, char* filename)
 //            DEBUG_DEBUG(path);
 //            DEBUG_DEBUG(fmtname(path));
             if(strcmp(fmtname(path), filename) == 0) {
-                DEBUG_DEBUG()
+//                DEBUG_DEBUG()
                 printf("%s\n", path);
             }
             break;
