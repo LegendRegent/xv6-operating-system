@@ -7,12 +7,7 @@
 
 void batch(int *p) {
 
-    // this function is mostly generated copilot.
     // A batch should only have an input pipe[0] to begin with.
-    // so I commented out the pipe[1] close.
-    // I kinda get why copilot think the code works,
-    // but it should close the write end of the pipe first,
-    // instead of scatter the close of the unused write end everywhere.
 
     int prime;
     int n;
@@ -20,14 +15,12 @@ void batch(int *p) {
 
     if (read(p[0], &prime, sizeof(int)) == 0) {
         close(p[0]);
-//        close(p[1]);
         exit(0);
     }
     printf("prime %d\n", prime);
     pipe(p2);
     if (fork() == 0) {
-//        close(p[1]);
-        close(p2[1]); // added by me. batch won't write to p2[1]
+        close(p2[1]);
         batch(p2);
     } else {
         close(p2[0]);
@@ -37,7 +30,6 @@ void batch(int *p) {
             }
         }
         close(p[0]);
-//        close(p[1]);
         close(p2[1]);
         wait((int *) 0);
         exit(0);
