@@ -16,13 +16,13 @@
 
 // Debug macro with conditional compilation
 #if DEBUG_LEVEL >= DEBUG_LEVEL_DEBUG
-#define DEBUG_DEBUG(message) printf("INFO: %s\n", message)
+#define DEBUG_DEBUG(message) printf("DEBUG: %s\n", message)
 #else
 #define DEBUG_DEBUG(message)
 #endif
 
 #if DEBUG_LEVEL >= DEBUG_LEVEL_INFO
-#define DEBUG_INFO(message) printf("Medium: %s\n", message)
+#define DEBUG_INFO(message) printf("INFO: %s\n", message)
 #else
 #define DEBUG_INFO(message)
 #endif
