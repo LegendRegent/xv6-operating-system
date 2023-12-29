@@ -47,6 +47,8 @@ find(char* path, char* filename)
 
     switch(st.type){
         case T_FILE:
+            DEBUG_DEBUG(path);
+            DEBUG_DEBUG(fmtname(path));
             if(strcmp(fmtname(path), filename) == 0) {
                 printf("%s\n", path);
             }
