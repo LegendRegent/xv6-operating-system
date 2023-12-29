@@ -47,7 +47,7 @@ find(char* path, char* filename)
 
     switch(st.type){
         case T_FILE:
-            if(strcmp(fmtname(path)), filename) {
+            if(strcmp(fmtname(path), filename) == 0) {
                 printf("%s\n", path);
             }
 
