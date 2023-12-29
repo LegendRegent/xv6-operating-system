@@ -52,7 +52,7 @@ main(int argc, char *argv[])
     pipe(p);
     if (fork() >0) {
         close(p[0]);
-        for (int i = 2; i <= 35 i++) {
+        for (int i = 2; i <= 35; i++) {
             write(p[1], &i, sizeof(int));
         }
         close(p[1]);
