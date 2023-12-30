@@ -4,7 +4,7 @@
 #include "user/user.h"
 
 // 1 为打印调试信息
-#define DEBUG 0
+#define DEBUG 1
 
 // 宏定义
 #define debug(codes) if(DEBUG) {codes}
